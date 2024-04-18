@@ -65,17 +65,16 @@ const [error, setError] = useState(null);
     return <h2>No lease data available</h2>;
   }
 
-  
   console.log(formTenant)
   
   const landlord = lease.landlord;
   const properties = landlord.properties[0];
-  const tenant = showEdit? tenants.filter((tenant)=> tenant.name === formTenant) :lease.tenant;
+  const tenant = showEdit && tenants? tenants.find((tenant) => tenant.id === formTenant) :lease.tenant;
   const tenant_guarantors = guarantors.length > 0
     ? guarantors.filter((guarantor) => guarantor.tenant_id === lease.tenant_id)
     : [];
-  const suite = tenant.suite || {};
-  console.log(tenant.name)
+  const suite = tenant? tenant.suite: {};
+  console.log(tenant?tenant.name:"pending")
 
   return (
     <main className="window-main">
@@ -331,24 +330,24 @@ const [error, setError] = useState(null);
           <h4>LANDLORD: {landlord.name}</h4>
           <label htmlFor="landlordAddress">Landlord Mailing Address: {landlord.mailing_address}</label>
 
-          <h4>TENANT:  {tenant.name}</h4>
-          <label htmlFor="tenantTradeName">Tenant Trade Name: {tenant.trade_name}</label>
+          <h4>TENANT:  {tenant?tenant.name:"pending"}</h4>
+          <label htmlFor="tenantTradeName">Tenant Trade Name: {tenant? tenant.trade_name: "pending"}</label>
           <br />
-          <label htmlFor="tenantAddress">Tenant Mailing Address: {tenant.mailing_address}</label>
+          <label htmlFor="tenantAddress">Tenant Mailing Address: {tenant? tenant.mailing_address: "pending"}</label>
 
           <div>
             <p>Tenant Contact Number:</p>
             <div className="contact-number-row">
-              <label htmlFor="tenantBusiness">Business: {tenant.business_number}</label>
-              <label htmlFor="tenantCell">Cell: {tenant.cell_number}</label>
+              <label htmlFor="tenantBusiness">Business: {tenant? tenant.business_number: "pending"}</label>
+              <label htmlFor="tenantCell">Cell: {tenant? tenant.cell_number: "pending"}</label>
             </div>
           </div>
 
           <div>
             <p>Lease Premises:</p>
             <div className="lease-premises-row">
-              <label htmlFor="squareFeet">Approximately {suite.square_feet} Square feet, </label>
-              <label htmlFor="suite"> Suite: {suite.suite_number}</label>
+              <label htmlFor="squareFeet">Approximately {suite?suite.square_feet: "pending"} Square feet, </label>
+              <label htmlFor="suite"> Suite: {suite?suite.suite_number: "pending"}</label>
             </div>
           </div>
 

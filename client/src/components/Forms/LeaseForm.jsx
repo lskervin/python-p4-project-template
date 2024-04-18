@@ -32,14 +32,6 @@ export default function LeaseForm({
 
   const [leaseData, setLeaseData] = useState(leases)
 
-   // Handle tenant selection
-   function handleTenantChange(e) {
-    const selectedTenantId = e.target.value;
-    setFormData({ ...formData, tenant_id: selectedTenantId });
-    setFormTenant(selectedTenantId)
-
-  }
-
   async function handleSubmit(e) {
     e.preventDefault();
     const method = edit ? "PATCH" : "POST";
@@ -104,7 +96,15 @@ export default function LeaseForm({
 					</div>
 					<div className="input-group">
 						<label className="input-label">Tenant</label>
-						<select id="tenant_id" onChange={handleTenantChange} value={formData.tenant_id}>{tenants && tenants.map((tenant)=>{return(<option>{tenant.name}</option>)})}</select>
+						<select id="tenant_id" onChange={(e) => {
+                const selectedTenantId = e.target.value;
+                setFormTenant(selectedTenantId);
+                setFormData({ ...formData, tenant_id: selectedTenantId });
+              }} value={formData.tenant_id}>
+              {tenants && tenants.map((tenant) => (
+                <option key={tenant.id} value={tenant.id}>{tenant.name}</option>
+              ))}
+            </select>
 					</div>
 				</section>
 				<section className="settings-section">

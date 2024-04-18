@@ -149,7 +149,7 @@ function App() {
             </Route>
         </Routes>
     </main>
-    <footer></footer>
+    {/* <footer></footer> */}
 </div>
 
     );
