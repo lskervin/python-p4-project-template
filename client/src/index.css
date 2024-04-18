@@ -1,7 +1,476 @@
 :root {
   --bg: #282c34;
-  --header: #fff;
+  --header: #ffffff;
   --link: #61dafb;
   --text: hsla(0, 0%, 100%, 0.88);
 }
 
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+:root {
+	--header-outer-height: 110px;
+	--header-inner-height: 70px;
+	--header-height-difference: calc(
+		var(--header-outer-height) - var(--header-inner-height)
+	);
+	--header-bg: #ffffff;
+}
+
+body {
+	font-family: "DM Sans", sans-serif;
+	background-color: #f2f5f7;
+	line-height: 1.5;
+	min-height: 300vh;
+	position: relative;
+}
+
+.responsive-wrapper {
+	width: 90%;
+	max-width: 1280px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Sticky header */
+.header-outer {
+	/* Make it stick */
+	height: var(--header-outer-height);
+	position: sticky;
+	top: calc(
+		var(--header-height-difference) * -1
+	); /* Multiply by -1 to get a negative value */
+	display: flex;
+	align-items: center;
+
+	/* Other */
+	background-color: var(--header-bg);
+	box-shadow: 0 2px 10px 0 rgba(0,0,0, 0.1);
+}
+
+.header-inner {
+	/* Make it stick */
+	height: var(--header-inner-height);
+	position: sticky;
+	top: 0;
+
+	/* Other */
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+/* Styling of other elements */
+.header-logo img {
+	display: block;
+	height: calc(var(--header-outer-height) - 30px);
+	margin-left: -10px;
+}
+
+
+.header-navigation {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+}
+
+.header-navigation a,
+.header-navigation button {
+	font-size: 1.125rem;
+	color: inherit;
+	margin-left: 1.75rem;
+	position: relative;
+	font-weight: 500;
+}
+
+.header-navigation a {
+	display: none;
+	font-size: 1.125rem;
+	color: #00373d;
+	text-decoration: none;
+}
+
+.header-navigation button {
+	border: 0;
+	background-color: transparent;
+	padding: 0;
+}
+
+.header-navigation a:hover:after,
+.header-navigation button:hover:after {
+	transform: scalex(1);
+}
+
+.header-navigation a:after,
+.header-navigation button:after {
+	transition: 0.25s ease;
+	content: "";
+	display: block;
+	width: 100%;
+	height: 2px;
+	background-color: currentcolor;
+	transform: scalex(0);
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+}
+
+.main {
+	margin-top: 3rem;
+}
+
+.widget {
+	width: 100%;
+	max-width: 600px;
+	border-radius: 8px;
+	box-shadow: 0 15px 30px 0 rgba(0,0,0, 0.1);
+	background-color: #fff;
+	padding: 2.5rem;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 2rem;
+	font-size: 1.125rem;
+}
+
+.widget > * + * {
+	margin-top: 1.25em;
+}
+
+.widget h2 {
+	font-size: 1.5rem;
+	font-weight: 700;
+	line-height: 1.25;
+}
+
+.widget code {
+	display: inline-block;
+	padding: 0.125em 0.25em;
+	border-radius: 2px;
+	background-color: #bee5d3;
+}
+
+.widget strong {
+	font-weight: 700;
+}
+
+@media (min-width: 800px) {
+	.header-navigation a {
+		display: inline-block;
+	}
+
+	.header-navigation button {
+		display: none;
+	}
+}
+
+@keyframes shine {
+    0% {
+        background-position-x: -500%;
+    }
+    100% {
+        background-position-x: 500%;
+    }
+}
+
+/* Container for the signature section */
+.signature-section {
+	margin-top: 20px;
+  }
+  
+  /* Each row within the signature section */
+  .signature-row {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+  }
+  
+  /* Style for signature and date boxes */
+  .signature-box,
+  .date-box,
+  .landlord-signature-box,
+  .landlord-date-box,
+  .tenant-signature-box,
+  .tenant-date-box,
+  .notary-signature-box {
+	display: block;
+	align-items: center; /* Vertically center the label and input */
+	gap: 10px; /* Add space between label and input */
+  }
+  
+  /* Style for input elements */
+  .signature-box input,
+  .date-box input,
+  .landlord-signature-box input,
+  .landlord-date-box input,
+  .tenant-signature-box input,
+  .tenant-date-box input,
+  .notary-signature-box input {
+	width: 100%; /* Make the input box take full width of its container */
+	padding: 8px; /* Add padding for better readability */
+	border: 1px solid #ccc; /* Light gray border */
+	border-radius: 4px; /* Rounded corners */
+	font-size: 16px; /* Slightly larger font for easier readability */
+  }
+  
+  /* Style for the input boxes to appear more like signature input */
+  @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+.signature-box input,
+.landlord-signature-box input,
+.tenant-signature-box input,
+.notary-signature-box input {
+    font-family: 'Great Vibes', cursive;
+    font-size: larger;
+}
+
+  /* Style for labels */
+  .signature-box label,
+  .date-box label,
+  .landlord-signature-box label,
+  .landlord-date-box label,
+  .tenant-signature-box label,
+  .tenant-date-box label,
+  .notary-signature-box label {
+	font-weight: bold; /* Make labels bold */
+	margin-right: 50px; /* Add space to the right of labels */
+  }
+  
+/* Dashboard CSS */
+
+.dashboard {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-gap: 0;
+    grid-template-columns: 250px auto;
+    grid-template-areas: 'menu search'
+                         'menu content';
+}
+
+
+
+
+
+.content-wrap {
+    grid-area: content;
+    padding: 3em;
+    overflow: auto; /* Allows scrolling within the content area */
+
+    .content-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h1 {
+            font-size: 1.375em;
+            line-height: 100%;
+            color: @colorDark;
+            font-weight: 500;
+            margin: 0;
+            padding: 0;
+        }
+
+    }
+
+    .info-boxes {
+        padding: 3em 0 2em;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        grid-gap: 1em;
+
+        .info-box {
+            background: @white;
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0 3em;
+            border: 1px solid @bgDark;
+            border-radius: 5px;
+
+            .box-icon {
+                svg {
+                    display: block;
+                    width: 48px;
+                    height: 48px;
+
+                    path,
+                    circle {
+                        fill: @colorLight;
+                    }
+                }
+            }
+
+            .box-content {
+                padding-left: 1.25em;
+                white-space: nowrap;
+
+                .big {
+                    display: block;
+                    font-size: 2em;
+                    line-height: 150%;
+                    color: @colorDark;
+                }
+            }
+
+            &.active {
+                svg {
+                    circle,
+                    path {
+                        fill: @blue;
+                    }
+                }
+            }
+        }
+    }
+
+    .person-boxes {
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        grid-gap: 2em;
+
+        .person-box {
+            background: @white;
+            height: 320px;
+            text-align: center;
+            padding: 3em;
+            border: 1px solid @bgDark;
+            border-radius: 5px;
+
+            &:nth-child(2n) {
+                .box-avatar {
+                    .no-name {
+                        background: @blue;
+                    }
+                }
+            }
+
+            &:nth-child(5n) {
+                .box-avatar {
+                    .no-name {
+                        background: @yellow;
+                    }
+                }
+            }
+
+            .box-avatar {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                margin: 0px auto;
+                overflow: hidden;
+
+                img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                .no-name {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    color: @white;
+                    font-size: 1.5em;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    width: 100%;
+                    height: 100%;
+                    background: @red;
+                }
+            }
+
+            .box-bio {
+                white-space: no-wrap;
+
+                .bio-name {
+                    margin: 2em 0 0.75em;
+                    color: @colorDark;
+                    font-size: 1em;
+                    font-weight: 700;
+                    line-height: 100%;
+                }
+
+                .bio-position {
+                    margin: 0;
+                    font-size: 0.875em;
+                    line-height: 100%;
+                }
+            }
+
+            .box-actions {
+                margin-top: 1.25em;
+                padding-top: 1.25em;
+                width: 100%;
+                border-top: 1px solid @bgDark;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                button {
+                    border: 0;
+                    background: none;
+                    width: 32px;
+                    height: 32px;
+                    margin: 0;
+                    padding: 0;
+
+                    svg {
+                        position: relative;
+                        top: 2px;
+
+                        path,
+                        circle {
+                            fill: lighten(@colorLight, 10%);
+                            transition: fill 0.15s ease;
+                        }
+                    }
+
+                    &:hover {
+                        svg {
+                            path,
+                            circle {
+                                fill: lighten(@colorDark, 10%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+} 
+
+/* gurantors- lease info */
+/* Style the container to use a grid layout with one row and three columns */
+.guarantor-info-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns of equal width */
+    gap: 10px; /* Add some space between columns */
+    align-items: start; /* Align items at the top of each cell */
+}
+
+/* Style the label elements */
+.guarantor-info-row label {
+    display: flex;
+    flex-direction: column-reverse; /* Stack elements in reverse order (label below span) */
+    padding-top: 2px; /* Optional padding above the element */
+    padding-bottom: 10px; 
+    font-size:medium;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Style the span elements */
+.guarantor-info-box {
+    display: block; /* Ensure the span takes full width of its grid cell */
+    border-bottom: 1px solid #ccc; /* Add a bottom border */
+    padding-bottom: 2px; /* Optional padding below the element */
+}

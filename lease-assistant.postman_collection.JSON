@@ -1,0 +1,695 @@
+{
+    "info": {
+      "_postman_id": "1b28cd95-e91f-4b84-8f92-758b0cc79b5c",
+      "name": "Flask App Routes",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Landlords",
+        "item": [
+          {
+            "name": "Get All Landlords",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/landlords",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "landlords"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Create Landlord",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/landlords",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "landlords"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"name\": \"John Doe\",\n    \"mailing_address\": \"1234 Elm Street\",\n    \"contact_number\": \"555-1234\"\n}"
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Get Landlord by ID",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/landlords/1",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "landlords",
+                  "1"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Update Landlord by ID",
+            "request": {
+              "method": "PATCH",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/landlords/1",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "landlords",
+                  "1"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"name\": \"Johnathan Doe\",\n    \"mailing_address\": \"4321 Oak Street\"\n}"
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Delete Landlord by ID",
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/landlords/1",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "landlords",
+                  "1"
+                ]
+              }
+            },
+            "response": []
+          }
+        ]
+      },
+      {
+        "name": "Properties",
+        "item": [
+          {
+            "name": "Get All Properties",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/properties",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "properties"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Create Property",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/properties",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "properties"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"type\": \"Residential\",\n    \"address\": \"4567 Maple Ave\",\n    \"landlord_id\": 1\n}"
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Get Property by ID",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/properties/1",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "properties",
+                  "1"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Update Property by ID",
+            "request": {
+              "method": "PATCH",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/properties/1",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "properties",
+                  "1"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"type\": \"Commercial\",\n    \"address\": \"9876 Birch St\"\n}"
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Delete Property by ID",
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/properties/1",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "properties",
+                  "1"
+                ]
+              }
+            },
+            "response": []
+          }
+        ]
+      },
+      {
+        "name": "Tenants",
+        "item": [
+          {
+            "name": "Get All Tenants",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/tenants",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "tenants"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Create Tenant",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/tenants",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "tenants"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"name\": \"Jane Smith\",\n    \"trade_name\": \"Jane's Bakery\",\n    \"mailing_address\": \"7890 Elm Street\",\n    \"business_number\": \"987654321\",\n    \"cell_number\": \"555-5678\",\n    \"suite_id\": 1\n}"
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Get Tenant by ID",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/tenants/1",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "tenants",
+                  "1"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Update Tenant by ID",
+            "request": {
+              "method": "PATCH",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/tenants/1",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "tenants",
+                  "1"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"name\": \"Janet Smith\",\n    \"mailing_address\": \"4567 Maple Ave\"\n}"
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Delete Tenant by ID",
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/tenants/1",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "tenants",
+                  "1"
+                ]
+              }
+            },
+            "response": []
+          }
+        ]
+      },
+      {
+        "name": "Suites",
+        "item": [
+          {
+            "name": "Get All Suites",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/suites",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "suites"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Create Suite",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/suites",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "suites"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"property_id\": 1,\n    \"suite_number\": 101,\n    \"tenant_id\": 1,\n    \"square_feet\": 1000\n}"
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Get Suite by ID",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/suites/1",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "suites",
+                  "1"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Update Suite by ID",
+            "request": {
+              "method": "PATCH",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/suites/1",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "suites",
+                  "1"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"suite_number\": 202,\n    \"square_feet\": 1200\n}"
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Delete Suite by ID",
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/suites/1",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "suites",
+                  "1"
+                ]
+              }
+            },
+            "response": []
+          }
+        ]
+      },
+      {
+        "name": "Guarantors",
+        "item": [
+          {
+            "name": "Get All Guarantors",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/guarantors",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "guarantors"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Create Guarantor",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/guarantors",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "guarantors"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"tenant_id\": 1,\n    \"full_name\": \"Sarah White\",\n    \"date_of_birth\": \"1985-02-15\",\n    \"ssn\": \"123-45-6789\"\n}"
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Get Guarantor by ID",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/guarantors/1",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "guarantors",
+                  "1"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Update Guarantor by ID",
+            "request": {
+              "method": "PATCH",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/guarantors/1",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "guarantors",
+                  "1"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"full_name\": \"Sarah Elizabeth White\",\n    \"ssn\": \"987-65-4321\"\n}"
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Delete Guarantor by ID",
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/guarantors/1",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "guarantors",
+                  "1"
+                ]
+              }
+            },
+            "response": []
+          }
+        ]
+      },
+      {
+        "name": "Leases",
+        "item": [
+          {
+            "name": "Get All Leases",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/leases",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "leases"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Create Lease",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/leases",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "leases"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"start_date\": \"2024-05-01\",\n    \"landlord_id\": 1,\n    \"property_id\": 1,\n    \"tenant_id\": 1,\n    \"guarantor_id\": 1,\n    \"suite_id\": 1,\n    \"state\": \"CA\",\n    \"country\": \"USA\"\n}"
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Get Lease by ID",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/leases/1",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "leases",
+                  "1"
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Update Lease by ID",
+            "request": {
+              "method": "PATCH",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/leases/1",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "leases",
+                  "1"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"start_date\": \"2024-06-01\",\n    \"country\": \"Canada\"\n}"
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Delete Lease by ID",
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/leases/1",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "leases",
+                  "1"
+                ]
+              }
+            },
+            "response": []
+          }
+        ]
+      }
+    ],
+    "variable": [
+      {
+        "key": "baseUrl",
+        "value": "http://localhost:5555",
+        "type": "string"
+      }
+    ]
+  }
+  
